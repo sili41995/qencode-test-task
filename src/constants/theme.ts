@@ -31,6 +31,9 @@ interface ITheme {
   borderRadius: {
     primaryBorderRadius: number;
   };
+  shadows: {
+    primary: string;
+  };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
 }
@@ -63,6 +66,9 @@ const theme: ITheme = {
   },
   borderRadius: {
     primaryBorderRadius: 4,
+  },
+  shadows: {
+    primary: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
   },
   transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
