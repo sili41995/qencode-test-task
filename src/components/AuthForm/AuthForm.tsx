@@ -4,13 +4,14 @@ import { Container, Title } from './AuthForm.styled';
 import Logo from '@/icons/logo.svg?react';
 import AltAuth from '../AltAuth';
 
-const AuthForm: FC<IProps> = ({ title, showAltAuth, form }) => {
+const AuthForm: FC<IProps> = ({ title, showAltAuth, form, redirectLink }) => {
   return (
     <Container>
       <Logo />
       <Title>{title}</Title>
       {showAltAuth && <AltAuth />}
       {form}
+      {redirectLink}
     </Container>
   );
 };

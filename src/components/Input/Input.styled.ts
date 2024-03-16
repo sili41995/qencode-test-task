@@ -52,3 +52,19 @@ export const ShowPassBtn = styled.button`
     color: ${({ theme }) => theme.colors.accentColor};
   }
 `;
+
+export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+`;
+
+export const Title = styled.span`
+  color: ${({ theme }) => theme.colors.secondaryFontColor};
+  font-family: ${({ theme }) => theme.fontFamily.primary};
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.024em;
+  text-align: left;
+`;

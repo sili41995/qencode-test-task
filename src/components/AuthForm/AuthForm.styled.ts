@@ -10,7 +10,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  width: 319px;
   margin-top: ${({ theme }) => theme.spacing(20)};
   color: rgb(26, 25, 25);
   font-family: ${({ theme }) => theme.fontFamily.primary};

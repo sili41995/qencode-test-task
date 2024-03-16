@@ -14,3 +14,12 @@ export interface ICredentials {
 }
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
+
+export interface INewPassProps {
+  password: string;
+  confirmPassword: string;
+}
+
+export interface IForgotPassword {
+  email: string;
+}

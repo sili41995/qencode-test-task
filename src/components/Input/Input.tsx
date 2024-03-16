@@ -1,10 +1,17 @@
 import { FC } from 'react';
 import { IProps } from './Input.types';
-import { InputWrap, ShowPassBtn, StyledInput } from './Input.styled';
+import {
+  InputWrap,
+  Label,
+  ShowPassBtn,
+  StyledInput,
+  Title,
+} from './Input.styled';
 import { LuEye, LuEyeOff } from 'react-icons/lu';
 import { InputTypes } from '@/constants';
 
 const Input: FC<IProps> = ({
+  label,
   settings,
   showPassBtn,
   type,
@@ -19,7 +26,7 @@ const Input: FC<IProps> = ({
     <LuEyeOff size={20} />
   );
 
-  return showPassBtn ? (
+  const inputWithBtn = showPassBtn ? (
     <InputWrap>
       {input}
       <ShowPassBtn type='button' onClick={onClick}>
@@ -28,6 +35,15 @@ const Input: FC<IProps> = ({
     </InputWrap>
   ) : (
     input
+  );
+
+  return label ? (
+    <Label>
+      <Title>{label}</Title>
+      {inputWithBtn}
+    </Label>
+  ) : (
+    inputWithBtn
   );
 };
 

@@ -1,7 +1,7 @@
 import AuthForm from '@/components/AuthForm';
 import AuthSection from '@/components/AuthSection';
-import LogInForm from '@/components/LogInForm';
 import RedirectLink from '@/components/RedirectLink';
+import SignUpForm from '@/components/SignUpForm';
 import { PagePaths } from '@/constants';
 import { FC } from 'react';
 
@@ -9,14 +9,14 @@ const LoginPage: FC = () => {
   return (
     <AuthSection>
       <AuthForm
-        title='Log in to your account'
+        title='Sign Up'
         showAltAuth={true}
-        form={<LogInForm />}
+        form={<SignUpForm />}
         redirectLink={
           <RedirectLink
-            title='Is your company new to Qencode?'
-            pathLink={PagePaths.signUp}
-            pathTitle='Sign up'
+            title='If you have an account'
+            pathLink={PagePaths.login}
+            pathTitle='Log in'
           />
         }
       />

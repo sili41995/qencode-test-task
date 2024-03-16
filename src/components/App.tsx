@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Loader from '@/components/Loader';
 
 const LoginPage = lazy(() => import('@/pages/LoginPage'));
+const SignUpPage = lazy(() => import('@/pages/SignUpPage'));
 const ForgotPasswordPage = lazy(() => import('@/pages/ForgotPasswordPage'));
 const NewPasswordPage = lazy(() => import('@/pages/NewPasswordPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
@@ -19,6 +20,8 @@ const App: FC = () => {
       <Route path={PagePaths.homePath} element={<SharedLayout />}>
         <Route index element={<LoginPage />} />
         <Route path={PagePaths.login} element={<LoginPage />} />
+        <Route path={PagePaths.signUp} element={<SignUpPage />} />
+
         <Route
           path={PagePaths.forgotPassword}
           element={<ForgotPasswordPage />}

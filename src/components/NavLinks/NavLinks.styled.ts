@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const List = styled.ul`
   display: flex;
-  gap: ${({ theme }) => theme.spacing(2)};
+  gap: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const ListItem = styled.li`
@@ -14,7 +14,7 @@ export const ListItem = styled.li`
     border: 1px solid;
     border-color: ${({ theme }) => theme.colors.whiteColor};
     color: ${({ theme }) => theme.colors.whiteColor};
-    font-family: Inter;
+    font-family: ${({ theme }) => theme.fontFamily.primary};
     font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
     font-weight: 500;
     text-align: center;
