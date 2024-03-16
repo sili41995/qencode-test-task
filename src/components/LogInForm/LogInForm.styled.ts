@@ -14,20 +14,17 @@ export const Form = styled.form`
     font-size: 14px;
     font-weight: 500;
     line-height: 1.43;
-    letter-spacing: 0%;
-    text-align: right;
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+
+    &:is(:hover, :focus) {
+      color: ${({ theme }) => theme.colors.accentColor};
+    }
   }
 `;
 
-export const Input = styled.input`
+export const InputsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: 100%;
-
-  &:not(:last-of-type) {
-    margin-bottom: 25px;
-  }
-`;
-
-export const Button = styled.button`
-  width: 100%;
-  margin-top: 30px;
 `;

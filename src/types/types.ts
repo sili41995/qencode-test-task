@@ -1,4 +1,5 @@
 import { PagePaths } from '@/constants';
+import { MouseEvent } from 'react';
 
 export interface INavLink {
   title: string;
@@ -6,3 +7,10 @@ export interface INavLink {
 }
 
 export type NavLinks = Readonly<INavLink[]>;
+
+export interface ICredentials {
+  email: string;
+  password: string;
+}
+
+export type BtnClickEvent = MouseEvent<HTMLButtonElement>;

@@ -10,6 +10,9 @@ interface ITheme {
     secondaryFontColor: string;
     otherFontColor: string;
     whiteColor: string;
+    accentColor: string;
+    invalidColor: string;
+    validColor: string;
   };
   fontFamily: {
     primary: string;
@@ -46,6 +49,9 @@ const theme: ITheme = {
     secondaryFontColor: '#060E1E',
     otherFontColor: '#A1ABB5',
     whiteColor: '#FFFFFF',
+    accentColor: '#4d5ae5',
+    invalidColor: '#FF1919',
+    validColor: '#00e000',
   },
   fontFamily: {
     primary: 'Basis Grotesque Pro',
