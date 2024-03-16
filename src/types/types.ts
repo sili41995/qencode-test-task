@@ -17,7 +17,7 @@ export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
 export interface INewPassProps {
   password: string;
-  confirmPassword: string;
+  password_confirm: string;
 }
 
 export interface IForgotPassword {

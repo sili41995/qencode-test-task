@@ -73,7 +73,7 @@ const NewPasswordForm: FC = () => {
           minLength={confPassValueLength}
           maxLength={confPassValueLength}
           settings={{
-            ...register('confirmPassword', {
+            ...register('password_confirm', {
               required: true,
             }),
           }}
