@@ -1,5 +1,5 @@
 const enum AuthParams {
-  passMinLength = 6,
+  passMinLength = 8,
 }
 
 export default AuthParams;
