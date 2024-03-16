@@ -56,11 +56,11 @@ const NewPasswordForm: FC = () => {
           label='Password'
           type={passInputType}
           placeholder='Password'
-          minLength={AuthParams.passMinLength}
+          minLength={Number(AuthParams.passMinLength)}
           settings={{
             ...register('password', {
               required: true,
-              minLength: AuthParams.passMinLength,
+              minLength: Number(AuthParams.passMinLength),
             }),
           }}
         />

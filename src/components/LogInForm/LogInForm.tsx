@@ -13,15 +13,20 @@ import { BtnClickEvent, ICredentials } from '@/types/types';
 import { makeBlur, toasts } from '@/utils';
 import SubmitFormBtn from '../SubmitFormBtn';
 import Input from '../Input';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import { selectIsLoading } from '@/redux/auth/selectors';
+import { login } from '@/redux/auth/operations';
 
 const LogInForm: FC = () => {
+  const [credentials, setCredentials] = useState<ICredentials | null>(null);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const {
     register,
     formState: { errors, isSubmitting },
     handleSubmit,
   } = useForm<ICredentials>();
-  const isLoading = false;
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector(selectIsLoading);
   const inputType = showPassword ? InputTypes.text : InputTypes.password;
 
   useEffect(() => {
@@ -39,8 +44,26 @@ const LogInForm: FC = () => {
       );
   }, [isSubmitting, errors]);
 
+  useEffect(() => {
+    if (credentials) {
+      const promise = dispatch(login(credentials));
+      promise
+        .unwrap()
+        .then(() => {
+          toasts.successToast(Messages.greetings);
+        })
+        .catch((error) => {
+          toasts.errorToast(error);
+        });
+
+      return () => {
+        promise.abort();
+      };
+    }
+  }, [credentials, dispatch]);
+
   const onSubmit: SubmitHandler<ICredentials> = (data) => {
-    console.log(data);
+    setCredentials(data);
   };
 
   const onShowPassBtnClick = (e: BtnClickEvent) => {
@@ -66,11 +89,11 @@ const LogInForm: FC = () => {
           showPassBtn={true}
           type={inputType}
           placeholder='Password'
-          minLength={AuthParams.passMinLength}
+          minLength={Number(AuthParams.passMinLength)}
           settings={{
             ...register('password', {
               required: true,
-              minLength: AuthParams.passMinLength,
+              minLength: Number(AuthParams.passMinLength),
             }),
           }}
         />

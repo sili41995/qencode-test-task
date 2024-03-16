@@ -59,11 +59,11 @@ const SignUpForm: FC = () => {
           showPassBtn={true}
           type={inputType}
           placeholder='Password'
-          minLength={AuthParams.passMinLength}
+          minLength={Number(AuthParams.passMinLength)}
           settings={{
             ...register('password', {
               required: true,
-              minLength: AuthParams.passMinLength,
+              minLength: Number(AuthParams.passMinLength),
             }),
           }}
         />
