@@ -1,3 +1,11 @@
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { selectIsLoading } from '@/redux/auth/selectors';
+import { login } from '@/redux/auth/operations';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import Input from '@/components/Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
 import {
   AuthParams,
   InputTypes,
@@ -5,17 +13,9 @@ import {
   PagePaths,
   regExp,
 } from '@/constants';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { FC, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, InputsContainer } from './LogInForm.styled';
-import { BtnClickEvent, ICredentials } from '@/types/types';
 import { makeBlur, toasts } from '@/utils';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Input from '../Input';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { selectIsLoading } from '@/redux/auth/selectors';
-import { login } from '@/redux/auth/operations';
+import { BtnClickEvent, ICredentials } from '@/types/types';
+import { Form, InputsContainer } from './LogInForm.styled';
 
 const LogInForm: FC = () => {
   const [credentials, setCredentials] = useState<ICredentials | null>(null);

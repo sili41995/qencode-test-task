@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { LuEye, LuEyeOff } from 'react-icons/lu';
+import { InputTypes } from '@/constants';
 import { IProps } from './Input.types';
 import {
   InputWrap,
@@ -7,8 +9,6 @@ import {
   StyledInput,
   Title,
 } from './Input.styled';
-import { LuEye, LuEyeOff } from 'react-icons/lu';
-import { InputTypes } from '@/constants';
 
 const Input: FC<IProps> = ({
   label,

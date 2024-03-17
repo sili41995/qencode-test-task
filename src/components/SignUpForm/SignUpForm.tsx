@@ -1,11 +1,11 @@
-import { AuthParams, InputTypes, Messages, regExp } from '@/constants';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { FC, useEffect, useState } from 'react';
-import { Form, InputsContainer } from './SignUpForm.styled';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { BtnClickEvent, ICredentials } from '@/types/types';
 import { makeBlur, toasts } from '@/utils';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Input from '../Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import Input from '@/components/Input';
+import { AuthParams, InputTypes, Messages, regExp } from '@/constants';
+import { Form, InputsContainer } from './SignUpForm.styled';
 
 const SignUpForm: FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);

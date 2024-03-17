@@ -1,3 +1,4 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import authServiceApi from '@/service/authServiceApi';
 import {
   IAccessToken,
@@ -7,7 +8,6 @@ import {
   IResetPasswordProps,
   ISetPasswordProps,
 } from '@/types/types';
-import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const accessToken = createAsyncThunk<
   IAuthRes,

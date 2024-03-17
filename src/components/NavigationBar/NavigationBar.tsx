@@ -1,10 +1,12 @@
 import { FC } from 'react';
+import { selectIsLoggedIn } from '@/redux/auth/selectors';
+import { useAppSelector } from '@/hooks/redux';
+import NavLinks from '@/components/NavLinks';
 import { Container, Nav } from './NavigationBar.styled';
 import { IProps } from './NavigationBar.types';
-import NavLinks from '@/components/NavLinks';
 
 const NavigationBar: FC<IProps> = ({ navLinks, restrictedNavLinks }) => {
-  const isLoggedIn = false;
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   return (
     <Container>

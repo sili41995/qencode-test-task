@@ -5,23 +5,21 @@ import SignUpForm from '@/components/SignUpForm';
 import { PagePaths } from '@/constants';
 import { FC } from 'react';
 
-const LoginPage: FC = () => {
-  return (
-    <AuthSection>
-      <AuthForm
-        title='Sign Up'
-        showAltAuth={true}
-        form={<SignUpForm />}
-        redirectLink={
-          <RedirectLink
-            title='If you have an account'
-            pathLink={PagePaths.login}
-            pathTitle='Log in'
-          />
-        }
-      />
-    </AuthSection>
-  );
-};
+const LoginPage: FC = () => (
+  <AuthSection>
+    <AuthForm
+      title='Sign Up'
+      showAltAuth={true}
+      form={<SignUpForm />}
+      redirectLink={
+        <RedirectLink
+          title='If you have an account'
+          pathLink={PagePaths.login}
+          pathTitle='Log in'
+        />
+      }
+    />
+  </AuthSection>
+);
 
 export default LoginPage;

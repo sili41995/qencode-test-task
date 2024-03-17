@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import { BtnClickEvent } from '@/types/types';
+import { makeBlur } from '@/utils';
 import {
   Button,
   Container,
@@ -9,8 +11,6 @@ import {
   ListItem,
   Title,
 } from './AltAuth.styled';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur } from '@/utils';
 
 const AltAuth: FC = () => {
   const onAuthBtnClick = (e: BtnClickEvent) => {

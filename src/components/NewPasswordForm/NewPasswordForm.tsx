@@ -1,15 +1,15 @@
-import { AuthParams, InputTypes, Messages, PagePaths } from '@/constants';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { FC, useEffect, useState } from 'react';
-import { Form, InputsContainer } from './NewPasswordForm.styled';
-import { BtnClickEvent, INewPassProps } from '@/types/types';
-import { makeBlur, toasts } from '@/utils';
-import SubmitFormBtn from '../SubmitFormBtn';
-import Input from '../Input';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { selectIsLoading } from '@/redux/auth/selectors';
-import { setPassword } from '@/redux/auth/operations';
 import { useParams } from 'react-router-dom';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { setPassword } from '@/redux/auth/operations';
+import { selectIsLoading } from '@/redux/auth/selectors';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import { AuthParams, InputTypes, Messages, PagePaths } from '@/constants';
+import Input from '@/components/Input';
+import SubmitFormBtn from '@/components/SubmitFormBtn';
+import { makeBlur, toasts } from '@/utils';
+import { BtnClickEvent, INewPassProps } from '@/types/types';
+import { Form, InputsContainer } from './NewPasswordForm.styled';
 
 const NewPasswordForm: FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);

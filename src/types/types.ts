@@ -1,5 +1,5 @@
-import { AuthParams, PagePaths } from '@/constants';
 import { MouseEvent } from 'react';
+import { AuthParams, PagePaths } from '@/constants';
 
 export interface INavLink {
   title: string;

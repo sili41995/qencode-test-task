@@ -1,15 +1,15 @@
-import { AuthParams, InputTypes, Messages, regExp } from '@/constants';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { FC, useEffect } from 'react';
-import { ButtonsList, Form, ListItem } from './ForgotPasswordForm.styled';
-import { BtnClickEvent, IForgotPassword } from '@/types/types';
-import { makeBlur, toasts } from '@/utils';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { resetPassword } from '@/redux/auth/operations';
+import { selectIsLoading } from '@/redux/auth/selectors';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import ResetFormBtn from '@/components/ResetFormBtn';
 import SubmitFormBtn from '@/components/SubmitFormBtn';
 import Input from '@/components/Input';
-import ResetFormBtn from '@/components/ResetFormBtn';
-import { resetPassword } from '@/redux/auth/operations';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { selectIsLoading } from '@/redux/auth/selectors';
+import { AuthParams, InputTypes, Messages, regExp } from '@/constants';
+import { makeBlur, toasts } from '@/utils';
+import { BtnClickEvent, IForgotPassword } from '@/types/types';
+import { ButtonsList, Form, ListItem } from './ForgotPasswordForm.styled';
 
 const ForgotPasswordForm: FC = () => {
   const {

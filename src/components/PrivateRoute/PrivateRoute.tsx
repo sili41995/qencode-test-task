@@ -1,9 +1,9 @@
+import { FC } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { selectIsLoggedIn, selectIsRefreshing } from '@/redux/auth/selectors';
 import { useAppSelector } from '@/hooks/redux';
-import { IProps } from './PrivateRoute.types';
 import { PagePaths } from '@/constants';
-import { FC } from 'react';
+import { IProps } from './PrivateRoute.types';
 
 const PrivateRoute: FC<IProps> = ({ element }) => {
   const isLoggedIn = useAppSelector(selectIsLoggedIn);
