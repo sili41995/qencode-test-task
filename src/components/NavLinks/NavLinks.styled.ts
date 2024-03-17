@@ -15,8 +15,8 @@ export const ListItem = styled.li`
     border-color: ${({ theme }) => theme.colors.whiteColor};
     color: ${({ theme }) => theme.colors.whiteColor};
     font-family: ${({ theme }) => theme.fontFamily.primary};
-    font-size: ${({ theme }) => theme.fontSize.primaryFontSize}px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSize.primary}px;
+    font-weight: ${({ theme }) => theme.fontWeight.primary};
     text-align: center;
     transition: color ${({ theme }) => theme.transitionDurationAndFunc},
       background-color ${({ theme }) => theme.transitionDurationAndFunc};

@@ -62,8 +62,8 @@ export const Label = styled.label`
 export const Title = styled.span`
   color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 15px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSize.other}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.4;
   letter-spacing: -0.024em;
   text-align: left;

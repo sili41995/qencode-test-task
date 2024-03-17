@@ -17,11 +17,17 @@ interface ITheme {
   fontFamily: {
     primary: string;
   };
-  // fontWeight: {
-  // };
+  fontWeight: {
+    primary: number;
+    secondary: number;
+    other: number;
+  };
   fontSize: {
-    titleFontSize: number;
-    primaryFontSize: number;
+    title: number;
+    decorative: number;
+    primary: number;
+    secondary: number;
+    other: number;
   };
   padding: {
     container: number;
@@ -56,11 +62,17 @@ const theme: ITheme = {
   fontFamily: {
     primary: 'Basis Grotesque Pro',
   },
-  // fontWeight: {
-  // };
+  fontWeight: {
+    primary: 500,
+    secondary: 700,
+    other: 400,
+  },
   fontSize: {
-    titleFontSize: 30,
-    primaryFontSize: 16,
+    title: 30,
+    decorative: 12,
+    primary: 16,
+    secondary: 14,
+    other: 15,
   },
   padding: {
     container: 16,

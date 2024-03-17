@@ -8,8 +8,8 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.primaryColor};
   color: ${({ theme }) => theme.colors.whiteColor};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 16px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.31;
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
 

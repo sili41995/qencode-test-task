@@ -15,8 +15,8 @@ export const Form = styled.form`
     margin-top: 15px;
     color: ${({ theme }) => theme.colors.primaryColor};
     font-family: ${({ theme }) => theme.fontFamily.primary};
-    font-size: 14px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSize.secondary}px;
+    font-weight: ${({ theme }) => theme.fontWeight.primary};
     line-height: 1.43;
     transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 

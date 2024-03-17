@@ -9,8 +9,8 @@ export const Button = styled.button`
   padding: 13px;
   color: ${({ theme }) => theme.colors.secondaryFontColor};
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 16px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSize.primary}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.31;
   letter-spacing: -0.024em;
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};

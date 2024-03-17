@@ -16,21 +16,21 @@ const GlobalStyles: FC = () => (
         font-family: ${theme.fontFamily.primary};
         src: local(${theme.fontFamily.primary}),
           url(${basisGrotesqueProBold}) format('truetype');
-        font-weight: 700;
+        font-weight: ${theme.fontWeight.secondary};
       }
 
       @font-face {
         font-family: ${theme.fontFamily.primary};
         src: local(${theme.fontFamily.primary}),
           url(${basisGrotesqueProMedium}) format('truetype');
-        font-weight: 500;
+        font-weight: ${theme.fontWeight.primary};
       }
 
       @font-face {
         font-family: ${theme.fontFamily.primary};
         src: local(${theme.fontFamily.primary}),
           url(${basisGrotesqueProRegular}) format('truetype');
-        font-weight: 400;
+        font-weight: ${theme.fontWeight.other};
       }
 
       body {

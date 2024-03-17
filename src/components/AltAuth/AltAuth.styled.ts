@@ -33,8 +33,8 @@ export const Button = styled.button`
 export const Title = styled.span`
   color: rgb(6, 14, 30);
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 14px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSize.secondary}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.43;
 `;
 
@@ -45,8 +45,8 @@ export const Delimiter = styled.p`
   margin-top: 30px;
   color: #bec5cc;
   font-family: ${({ theme }) => theme.fontFamily.primary};
-  font-size: 12px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.fontSize.decorative}px;
+  font-weight: ${({ theme }) => theme.fontWeight.primary};
   line-height: 1.33;
   text-transform: uppercase;
   text-align: center;
