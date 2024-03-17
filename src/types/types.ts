@@ -56,7 +56,7 @@ export interface ILoginProps {
 }
 
 export interface IResetPasswordProps {
-  email: 'user@example.com';
+  email: string;
   redirect_url: AuthParams.redirectURL;
 }
 

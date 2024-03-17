@@ -6,6 +6,8 @@ const enum Messages {
   passReqErr = 'Password is required',
   passMinLengthErr = `Password minimum length is ${AuthParams.passMinLength} characters`,
   greetings = 'Hello',
+  resetPassSuccess = 'Go to the specified email to confirm the action',
+  setPasswordSuccess = 'Password updated successfully',
 }
 
 export default Messages;

@@ -26,7 +26,10 @@ const App: FC = () => {
           path={PagePaths.forgotPassword}
           element={<ForgotPasswordPage />}
         />
-        <Route path={PagePaths.newPassword} element={<NewPasswordPage />} />
+        <Route
+          path={`${PagePaths.newPassword}/:${PagePaths.dynamicToken}/:${PagePaths.dynamicSecret}`}
+          element={<NewPasswordPage />}
+        />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>

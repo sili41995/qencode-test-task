@@ -23,6 +23,7 @@ const authSlice = createSlice({
         refreshToken: payload.refresh_token,
         isLoggedIn: true,
         isLoading: false,
+        isRefreshing: false,
       }))
       .addCase(refreshToken.fulfilled, (_, { payload }) => ({
         ...initialState.auth,
@@ -30,6 +31,7 @@ const authSlice = createSlice({
         refreshToken: payload.refresh_token,
         isLoggedIn: true,
         isLoading: false,
+        isRefreshing: false,
       }))
       .addCase(login.fulfilled, (_, { payload }) => ({
         ...initialState.auth,
@@ -40,18 +42,23 @@ const authSlice = createSlice({
       }))
       .addCase(resetPassword.fulfilled, (state) => ({
         ...state,
+        isLoading: false,
       }))
       .addCase(setPassword.fulfilled, (state) => ({
         ...state,
+        isLoading: false,
       }))
       .addMatcher(
-        isAnyOf(
-          accessToken.pending,
-          refreshToken.pending,
-          login.pending,
-          resetPassword.pending,
-          setPassword.pending
-        ),
+        isAnyOf(accessToken.pending, refreshToken.pending),
+        (state) => ({
+          ...state,
+          isLoading: true,
+          error: null,
+          isRefreshing: true,
+        })
+      )
+      .addMatcher(
+        isAnyOf(login.pending, resetPassword.pending, setPassword.pending),
         (state) => ({
           ...state,
           isLoading: true,
@@ -59,13 +66,16 @@ const authSlice = createSlice({
         })
       )
       .addMatcher(
-        isAnyOf(
-          accessToken.rejected,
-          refreshToken.rejected,
-          login.rejected,
-          resetPassword.rejected,
-          setPassword.rejected
-        ),
+        isAnyOf(accessToken.rejected, refreshToken.rejected),
+        (state, { payload }) => ({
+          ...state,
+          isLoading: false,
+          isRefreshing: false,
+          error: payload as string,
+        })
+      )
+      .addMatcher(
+        isAnyOf(login.rejected, resetPassword.rejected, setPassword.rejected),
         (state, { payload }) => ({
           ...state,
           isLoading: false,
